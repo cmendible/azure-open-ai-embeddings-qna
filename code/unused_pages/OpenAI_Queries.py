@@ -161,11 +161,11 @@ try:
 
     col1, col2, col3 = st.columns([1,2,1])
     with col1:
-        st.image(os.path.join('images','microsoft.png'))
+        st.image(os.path.join('images','logo-santander.png'))
 
     col1, col2, col3 = st.columns([2,2,2])
-    with col1:
-        st.button("Check deployment", on_click=check_deployment)
+    # with col1:
+        # st.button("Check deployment", on_click=check_deployment)
     with col3:
         with st.expander("Settings"):
             # model = st.selectbox(

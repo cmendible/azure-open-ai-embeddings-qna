@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from streamlit_chat import message
 from utilities.helper import LLMHelper
 import regex as re
@@ -44,6 +45,10 @@ try :
     user_seed = os.getenv("CHAT_USER_SEED", "Bubba")
 
     llm_helper = LLMHelper()
+
+    col1, col2, col3 = st.columns([1,2,1])
+    with col1:
+        st.image(os.path.join('images','logo-santander.png'))
 
     # Chat 
     clear_chat = st.button("Clear chat", key="clear_chat", on_click=clear_chat_data)
