@@ -145,11 +145,11 @@ try:
 
     col1, col2, col3 = st.columns([1,2,1])
     with col1:
-        st.image(os.path.join('images','microsoft.png'))
+        st.image(os.path.join('images','logo-santander.png'))
 
     col1, col2, col3 = st.columns([2,2,2])
-    with col1:
-        st.button("Check deployment", on_click=check_deployment)
+    # with col1:
+        # st.button("Check deployment", on_click=check_deployment)
     with col3:
         with st.expander("Settings"):
             # model = st.selectbox(
@@ -168,9 +168,9 @@ try:
         st.session_state['question'], st.session_state['response'], st.session_state['context'], sources = llm_helper.get_semantic_answer_lang_chain(question, [])
         st.markdown("Answer:" + st.session_state['response'])
         st.markdown(f'\n\nSources: {sources}') 
-        with st.expander("Question and Answer Context"):
-            st.markdown(st.session_state['context'].replace('$', '\$'))
-            st.markdown(f"SOURCES: {sources}") 
+        # with st.expander("Question and Answer Context"):
+        #     st.markdown(st.session_state['context'].replace('$', '\$'))
+        #     st.markdown(f"SOURCES: {sources}") 
 
     if st.session_state['translation_language'] and st.session_state['translation_language'] != '':
         st.write(f"Translation to other languages, 翻译成其他语言, النص باللغة العربية")

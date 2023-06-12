@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from streamlit_chat import message
 from utilities.helper import LLMHelper
 
@@ -20,6 +21,10 @@ if 'source_documents' not in st.session_state:
     st.session_state['source_documents'] = []
 
 llm_helper = LLMHelper()
+
+col1, col2, col3 = st.columns([1,2,1])
+with col1:
+    st.image(os.path.join('images','logo-santander.png'))
 
 # Chat 
 st.text_input("You: ", placeholder="type your question", key="input", on_change=clear_text_input)
